@@ -9,5 +9,5 @@ public interface OnPageChangeListener {
     void onPageCountChange(int count);
 
     //页面改变
-    void onPageChange(int pos);
+    void onPageChange(int pos,int all);
 }

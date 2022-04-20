@@ -13,7 +13,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-
 class PageLoader {
     private static final String TAG = "PageLoader";
 
@@ -356,7 +355,7 @@ class PageLoader {
     }
 
     public void openChapter(int section) {
-        openChapter(section,0);
+        openChapter(section, 0);
     }
 
     public void openChapter(int section, int page) {
@@ -538,7 +537,7 @@ class PageLoader {
             for (int i = 0; i < mCurPage.lines.size(); ++i) {
                 String str = mCurPage.lines.get(i);
                 canvas.drawText(str, mMarginWidth, top, mTextPaint);
-                if (str.endsWith("\n")||str.endsWith("\r\n")) {
+                if (str.endsWith("\n") || str.endsWith("\r\n")) {
                     top += (interval + mParagraphSize);
                 } else {
                     top += interval;
@@ -756,7 +755,7 @@ class PageLoader {
      */
     TxtPage getCurPage(int pos) {
         if (mPageChangeListener != null) {
-            mPageChangeListener.onPageChange(pos);
+            mPageChangeListener.onPageChange(pos, mCurPageList.size());
         }
         return mCurPageList.get(pos);
     }
@@ -770,7 +769,7 @@ class PageLoader {
             return null;
         }
         if (mPageChangeListener != null) {
-            mPageChangeListener.onPageChange(pos);
+            mPageChangeListener.onPageChange(pos, mCurPageList.size());
         }
         return mCurPageList.get(pos);
     }
@@ -784,7 +783,7 @@ class PageLoader {
             return null;
         }
         if (mPageChangeListener != null) {
-            mPageChangeListener.onPageChange(pos);
+            mPageChangeListener.onPageChange(pos, mCurPageList.size());
         }
         return mCurPageList.get(pos);
     }

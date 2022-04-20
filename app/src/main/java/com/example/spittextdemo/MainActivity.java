@@ -86,8 +86,13 @@ public class MainActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onPageChange(int pos) {
-                Log.e("aaa", "翻页" + pos);
+            public void onPageChange(int pos, int all) {
+                Log.e("aaa", "本章总页码" + all + "-->当前页码" + pos);
+                if (pos == 0) {
+                    Log.e("aaa", "请求上一章");
+                } else if (pos == all - 1) {
+                    Log.e("aaa", "请求下一张");
+                }
             }
         });
 
